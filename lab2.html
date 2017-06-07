@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab2</title>
+
+	<style type="text/css">
+		table, tr, td, th {
+			text-align: center;
+			border-color: black;
+			border-style: solid;
+			border-width: 2px;
+			border-collapse: collapse;
+		}
+		html{
+			height:100%;
+		}
+		body{
+			background-image: url(fon.jpg); 
+			/*background: linear-gradient(to top, #E6E6FA, #D88FD8) no-repeat;*/
+			
+		}
+		table{
+			margin:auto;
+			margin-top: :25px;
+			padding-top:50px;
+		}
+		p{
+			font-size: 20px;
+			font-weight: bold;
+		}
+		th {
+			background-color: #5280EA;
+		}
+
+		td {
+			padding: 10px;
+			background-color: #E6ECF8;
+		}
+		
+		button {
+			display: inline-block;
+			background: -webkit-gradient(linear, 0 0, 0 100%, from(#D0ECF4), to(#D0ECF4), color-stop(0.5, #5BC9E1));
+			margin-top:5px;
+			text-align:center;
+			font-size: 15px;
+		}
+		#controls{
+			margin:auto;
+			width:75%;
+			text-align: center;
+			height:150px;
+			
+		}
+		#enum{
+			background-color: #E6ECF8;
+		
+		}
+	</style>
+
+	<script type="text/javascript" src="lab2js.js"></script>
+</head>
+
+<body>
+	
+	<div id="controls">
+		
+			
+		<button onclick="data.refreshTable()">Refresh</button>
+		<button onclick="data.addRandom()">Add random</button>
+		<button onclick="data.clear()">Clear</button>
+		<br></br>
+		<button onclick="data.addCustom()">Add custom</button>
+		Base:
+		<input id="custBase"type="number" size="40" value="1"/>
+		AngleA:
+		<input id="custAngA"type="number" size="40" value="1"/>
+		AngleB:
+		<input id="custAngB"type="number" size="40" value="1"/>
+		<br></br>
+		<button onclick="data.similarityCheck()">Check for similarity</button>:
+		<input id="comp1"type="number" size="40" value="0"/>
+		and
+		<input id="comp2" type="number" size="40" value="0"/>
+		Result:
+		<input id="compRes" type="text" readonly size="20" />
+		<br></br>
+	</div>
+	<div id="maintable">
+		<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>AB</th>
+				<th>AngleA</th>
+				<th>AngleB</th>
+				<th>BC</th>
+				<th>AC</th>
+				<th>AngleC</th>
+				<th>MedianAB</th>
+				<th>MedianBC</th>
+				<th>MedianAC</th>
+				<th>Operations</th>
+			</tr>
+		</thead>
+		<tbody id="triangles"></tbody>
+		</table>
+	</div>
+	
+
+	<script type="text/javascript">data.refreshTable()</script>	
+</body>
+
+</html>
